@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+    <!-- Filter class-->
+    <filter>
+        <filter-name>SimpleFilter</filter-name>
+        <filter-class>system.MyFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>SimpleFilter</filter-name>
+        <url-pattern>/secret.jsp</url-pattern>
+    </filter-mapping>
+    
+    <servlet>
+        <servlet-name>SimpleServlet</servlet-name>
+        <servlet-class>system.SimpleServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SimpleServlet</servlet-name>
+        <url-pattern>/simple</url-pattern>
+    </servlet-mapping>
+
+    <!--Render Form Page-->
+    <servlet>
+        <servlet-name>RenderServlet</servlet-name>
+        <servlet-class>system.RenderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RenderServlet</servlet-name>
+        <url-pattern>/render</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Log out-->
+    <servlet>
+        <servlet-name>LogOut</servlet-name>
+        <servlet-class>system.LogOut</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogOut</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+</web-app>
